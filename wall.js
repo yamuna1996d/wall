@@ -2,7 +2,7 @@ var express = require('express');
 var parser =require('body-parser');
 var mongoose=require('mongoose');
 var app=express();
-var router = require('./routes/rou');
+var router = require('./routes/route');
 
 app.use(parser.urlencoded({extended:false}));
 app.use('/add',router);
