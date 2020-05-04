@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 const wallSchema=new mongoose.Schema({
-    url:String,
+    url:Image,
     category:String
 });
 const model=mongoose.model('pics',wallSchema);
