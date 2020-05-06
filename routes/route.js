@@ -28,7 +28,7 @@ routers.get('/view', async (req, res) => {
 });
 routers.post('/search',async(req,res) =>{
     try {
-        var name=req.query.qname;
+        var name=req.body.qname;
         model.find({"category":name}, (error, data) => {
             if (error) {
                 throw error;
