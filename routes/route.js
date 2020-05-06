@@ -26,7 +26,7 @@ routers.get('/view', async (req, res) => {
 
     }
 });
-routers.get('/search',(req,res) =>{
+routers.post('/search',(req,res) =>{
     try {
         model.find(req.query, (error, data) => {
             if (error) {
