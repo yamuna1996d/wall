@@ -26,5 +26,19 @@ routers.get('/view', async (req, res) => {
 
     }
 });
-
+routers.post('/search',(req,res) =>{
+    try {
+        model.find(req.query, (error, data) => {
+            if (error) {
+                throw error;
+            }
+            else {
+                res.send(data);
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
 module.exports = routers
