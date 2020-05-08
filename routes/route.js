@@ -29,7 +29,7 @@ routers.get('/view', async (req, res) => {
 routers.get('/search',async(req,res) =>{
     try {
         var name=req.query.qname;
-        model.find({"category":name}, (error, data) => {
+        model.find({"searchword":name}, (error, data) => {
             if (error) {
                 throw error;
             }
