@@ -42,4 +42,20 @@ routers.get('/search',async(req,res) =>{
         res.status(500).send(error);
     }
 });
+routers.get('/catsearch',async(req,res) =>{
+    try {
+        var name=req.query.qname;
+        model.find({"category":name}, (error, data) => {
+            if (error) {
+                throw error;
+            }
+            else {
+                res.send(data);
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
 module.exports = routers
